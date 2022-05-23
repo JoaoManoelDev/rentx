@@ -20,10 +20,14 @@ class User {
   @Column()
   driver_license: string
 
-  @Column()
+  @Column({
+    default: false
+  })
   isAdmin: boolean
 
-  @Column()
+  @Column({
+    nullable: true
+  })
   avatar: string
 
   @CreateDateColumn()

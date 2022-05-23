@@ -27,7 +27,6 @@ class UsersRepository implements IUsersRepository {
       email,
       driver_license,
       avatar,
-      isAdmin: false,
       id
     })
 

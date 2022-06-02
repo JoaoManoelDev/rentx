@@ -2,34 +2,16 @@ import { Column, CreateDateColumn, Entity, PrimaryColumn } from "typeorm"
 
 import { v4 as uuidV4 } from "uuid"
 
-@Entity("users")
-class User {
-
+@Entity("cars_image")
+class CarImage {
   @PrimaryColumn()
   id: string
 
   @Column()
-  name: string
+  car_id: string
 
   @Column()
-  password: string
-
-  @Column()
-  email: string
-
-  @Column()
-  driver_license: string
-
-  @Column({
-    nullable: true,
-    default: false
-  })
-  isAdmin: boolean
-
-  @Column({
-    nullable: true
-  })
-  avatar: string
+  image_name: string
 
   @CreateDateColumn()
   created_at: Date
@@ -39,7 +21,6 @@ class User {
       this.id = uuidV4()
     }
   }
-
 }
 
-export { User }
+export { CarImage }

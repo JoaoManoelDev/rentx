@@ -6,13 +6,15 @@
   "scripts": {
     "dev": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules --respawn src/shared/infra/http/server.ts",
     "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js",
-    "test": "jest",
+    "test": "NODE_ENV=test jest",
     "seed:admin": "ts-node-dev src/shared/infra/typeorm/seeds/admin.ts",
-    "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run -d src/shared/infra/typeorm/data-source.ts"
+    "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run -d src/shared/infra/typeorm/data-source.ts",
+    "migration:revert": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert -d src/shared/infra/typeorm/data-source.ts"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "csv-parse": "^5.0.4",
+    "dayjs": "^1.11.2",
     "express": "^4.18.1",
     "express-async-errors": "^3.1.1",
     "jsonwebtoken": "^8.5.1",
@@ -30,9 +32,11 @@
     "@types/jest": "^27.5.1",
     "@types/jsonwebtoken": "^8.5.8",
     "@types/multer": "^1.4.7",
+    "@types/supertest": "^2.0.12",
     "@types/swagger-ui-express": "^4.1.3",
     "@types/uuid": "^8.3.4",
     "jest": "^28.1.0",
+    "supertest": "^6.2.3",
     "ts-jest": "^28.0.2",
     "ts-node-dev": "^1.1.8",
     "typescript": "^4.6.4"

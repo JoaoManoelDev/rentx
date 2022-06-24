@@ -15,6 +15,8 @@ export const AppDataSource = new DataSource({
   subscribers: [],
 })
 
-export function createConnection(host = "database"): Promise<DataSource> {
+export function createConnection(
+  host = process.env.NODE_ENV === "test" ? "localhost" : "database"
+): Promise<DataSource> {
   return AppDataSource.setOptions({ host }).initialize()
 }

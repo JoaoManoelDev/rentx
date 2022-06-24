@@ -20,11 +20,12 @@ services:
     container_name: database_test
     restart: always
     ports:
-      - 5555:5432
+      - 5555:5555
     environment:
       - POSTGRES_USER=docker
       - POSTGRES_PASSWORD=9121
       - POSTGRES_DB=rentx_test
+    command: -p 5555
     volumes:
       - pgdata:/data/postgres
 

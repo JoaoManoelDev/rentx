@@ -11,7 +11,7 @@ let connection: DataSource
 describe("Create Category Controller", () => {
 
   beforeAll(async () => {
-    connection = await createConnection("localhost")
+    connection = await createConnection()
     await connection.runMigrations()
 
     const id = uuidV4()

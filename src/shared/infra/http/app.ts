@@ -1,3 +1,4 @@
+import dotenv from "dotenv"
 import "reflect-metadata"
 import express, { NextFunction, Request, Response } from "express"
 import "express-async-errors"
@@ -10,6 +11,8 @@ import { createConnection } from "../typeorm/data-source"
 
 import "../../container"
 import { AppError } from "../../errors/AppError"
+
+dotenv.config()
 
 createConnection()
 

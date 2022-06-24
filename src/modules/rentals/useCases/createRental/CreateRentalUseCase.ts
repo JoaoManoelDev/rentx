@@ -49,8 +49,6 @@ class CreateRentalUseCase {
 
     const compare = this.dateProvider.compareInHours(dateNow, expected_return_date)
 
-    console.log(compare)
-
     if (compare < minimumHour) {
       throw new AppError("invalid return time")
     }
